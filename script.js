@@ -1,7 +1,7 @@
 // global variables to store current input, second input, and operator
 
 let currentInput = "";
-let secondInput = "";
+let firstInput = "";
 let operator = "";
 
 // Get the display element and buttons
@@ -24,7 +24,7 @@ const addbtn = document.getElementById("add");
 const subtractbtn = document.getElementById("subtract");
 const multiplybtn = document.getElementById("multiply");
 const dividebtn = document.getElementById("divide");
-const equalbtn = document.getElementById("equal");
+const equalbtn = document.getElementById("equals");
 const clearbtn = document.getElementById("clear");
 const clearEntrybtn = document.getElementById("clearEntry");
 
@@ -104,35 +104,57 @@ clearEntry.addEventListener("click", function() {
 
 // Add event listeners to operator buttons
 
-addbtn.addEventListener("click", function add(currentInput) {
-  
+addbtn.addEventListener("click", function() {
     operator = addbtn.value;
-    caldisplay.textContent += operator;
-    
+    firstInput = currentInput;
+    currentInput = "";
+    // caldisplay.textContent += operator;
 });
 
 subtractbtn.addEventListener("click", function() {
-  
+    operator = subtractbtn.value;
+    firstInput = currentInput;
+    currentInput = "";
 });
 
 multiplybtn.addEventListener("click", function() {
-  operator = "multiply";
+  operator = multiplybtn.value;
+  firstInput = currentInput;
+  currentInput = "";
 });
 
 dividebtn.addEventListener("click", function() {
-  operator = "divide";
+  operator = dividebtn.value;
+  firstInput = currentInput;
+  currentInput = "";
 });
 
+equalbtn.addEventListener("click", function() {
+let result;
+    if (operator === "+") {
+      result = Number(firstInput) + Number(currentInput);
+    }
+    if (operator === "-") {
+      result = Number(firstInput) - Number(currentInput);
+    }
+    if (operator === "*") {
+      result = Number(firstInput) * Number(currentInput);
+    }
+    if (operator === "/") {
+      result = Number(firstInput) / Number(currentInput);
+    }
+    caldisplay.textContent = result;
+});
 
 // Define calculator functions
 
-const add = function(num1,num2){
-  return num1 + num2;
-}
+// const add = function(num1,num2){
+//   return num1 + num2;
+// }
 
-const subtract = function(num1, num2) {
-	return num1 - num2;
-};
+// const subtract = function(num1, num2) {
+// 	return num1 - num2;
+// };
 
 // const multiply = function(numbers) {
 // let multiply = 1; 
@@ -142,9 +164,9 @@ const subtract = function(num1, num2) {
 // return multiply;
 // };
 
-const divide = function(num1, num2) {
-    return num1 / num2;
-}
+// const divide = function(num1, num2) {
+//     return num1 / num2;
+// }
 // const sum = function(numbers) {
 //   let sum = 0;
 //   numbers.forEach((n) => {
