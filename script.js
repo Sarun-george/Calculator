@@ -1,5 +1,130 @@
-let num1;
-let num2;
+// global variables to store current input, second input, and operator
+
+let currentInput = "";
+let secondInput = "";
+let operator = "";
+
+// Get the display element and buttons
+
+// Number buttons
+const caldisplay = document.getElementById("display");
+const ninebtn = document.getElementById("9");
+const eightbtn = document.getElementById("8");
+const sevenbtn = document.getElementById("7");
+const sixbtn = document.getElementById("6");
+const fivebtn = document.getElementById("5");
+const fourbtn = document.getElementById("4");
+const threebtn = document.getElementById("3");
+const twobtn = document.getElementById("2");
+const onebtn = document.getElementById("1");
+const zerobtn = document.getElementById("0");
+
+// Operator buttons
+const addbtn = document.getElementById("add");
+const subtractbtn = document.getElementById("subtract");
+const multiplybtn = document.getElementById("multiply");
+const dividebtn = document.getElementById("divide");
+const equalbtn = document.getElementById("equal");
+const clearbtn = document.getElementById("clear");
+const clearEntrybtn = document.getElementById("clearEntry");
+
+
+// Add event listeners to number buttons
+
+ninebtn.addEventListener("click", function() {
+  currentInput += ninebtn.value;
+  caldisplay.textContent = currentInput;
+  console.log(currentInput);
+});
+
+eightbtn.addEventListener("click", function() {
+  currentInput += eightbtn.value;
+  caldisplay.textContent = currentInput;
+  console.log(currentInput);
+});
+
+sevenbtn.addEventListener("click", function() {
+  currentInput += sevenbtn.value;
+  caldisplay.textContent = currentInput;
+  console.log(currentInput);
+});
+
+sixbtn.addEventListener("click", function() {
+  currentInput += sixbtn.value;
+  caldisplay.textContent = currentInput;
+  console.log(currentInput);
+});
+
+fivebtn.addEventListener("click", function() {
+  currentInput += fivebtn.value;
+  caldisplay.textContent = currentInput;
+  console.log(currentInput  );
+});
+
+fourbtn.addEventListener("click", function() {
+  currentInput += fourbtn.value;
+  caldisplay.textContent = currentInput;
+  console.log(currentInput);
+});
+
+threebtn.addEventListener("click", function() {
+  currentInput += threebtn.value;
+  caldisplay.textContent = currentInput;
+  console.log(currentInput);
+});
+
+twobtn.addEventListener("click", function() {
+  currentInput += twobtn.value;
+  caldisplay.textContent = currentInput;
+  console.log(currentInput);
+});
+
+onebtn.addEventListener("click", function() {
+  currentInput += onebtn.value;
+  caldisplay.textContent = currentInput;
+  console.log(currentInput);
+});
+
+zerobtn.addEventListener("click", function() {
+  currentInput += zerobtn.value;
+  caldisplay.textContent = currentInput;
+  console.log(currentInput);
+});
+
+clearbtn.addEventListener("click", function() {
+  caldisplay.textContent = "";
+  currentInput = "";
+  operator = null;
+});
+
+clearEntry.addEventListener("click", function() {
+  caldisplay.textContent = caldisplay.textContent.slice(0, -1);
+});
+
+
+// Add event listeners to operator buttons
+
+addbtn.addEventListener("click", function add(currentInput) {
+  
+    operator = addbtn.value;
+    caldisplay.textContent += operator;
+    
+});
+
+subtractbtn.addEventListener("click", function() {
+  
+});
+
+multiplybtn.addEventListener("click", function() {
+  operator = "multiply";
+});
+
+dividebtn.addEventListener("click", function() {
+  operator = "divide";
+});
+
+
+// Define calculator functions
 
 const add = function(num1,num2){
   return num1 + num2;
@@ -43,11 +168,11 @@ const divide = function(num1, num2) {
 // };
 
 // Do not edit below this line
-module.exports = {
-  add,
-  subtract,
+// module.exports = {
+//   add,
+//   subtract,
 //   sum,
-  multiply,
+//   multiply,
 //   power,
 //   factorial
-};
+// };
